@@ -4,6 +4,7 @@ import com.charter.homework.retail.charterhomework.dto.request.CustomerPurchaseR
 import com.charter.homework.retail.charterhomework.dto.response.RewardsResponse;
 import com.charter.homework.retail.charterhomework.exceptions.AmountNotProvidedException;
 import com.charter.homework.retail.charterhomework.exceptions.CustomerIdNotProvidedException;
+import com.charter.homework.retail.charterhomework.exceptions.CustomerPurchasesNotProvidedException;
 import com.charter.homework.retail.charterhomework.exceptions.DateTimeNotProvidedException;
 import com.charter.homework.retail.charterhomework.service.RewardPointService;
 import jakarta.validation.Valid;
@@ -35,7 +36,8 @@ public class RewardPointController {
           @Valid @RequestBody CustomerPurchaseRewardPointRequest customerPurchaseRewardPointRequest) {
     try {
       return rewardPointService.calculateRewardsPointsWithStreams(customerPurchaseRewardPointRequest);
-    } catch (AmountNotProvidedException | CustomerIdNotProvidedException | DateTimeNotProvidedException e) {
+    } catch (AmountNotProvidedException | CustomerIdNotProvidedException | DateTimeNotProvidedException |
+             CustomerPurchasesNotProvidedException e) {
       throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage(), e);
     }
   }

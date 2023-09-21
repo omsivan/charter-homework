@@ -5,6 +5,7 @@ import com.charter.homework.retail.charterhomework.dto.request.CustomerPurchaseR
 import com.charter.homework.retail.charterhomework.dto.response.CustomerPointResponse;
 import com.charter.homework.retail.charterhomework.dto.response.RewardsResponse;
 import com.charter.homework.retail.charterhomework.exceptions.CustomerIdNotProvidedException;
+import com.charter.homework.retail.charterhomework.exceptions.CustomerPurchasesNotProvidedException;
 import com.charter.homework.retail.charterhomework.exceptions.DateTimeNotProvidedException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,6 +35,11 @@ public class RewardPointService {
    * @return the reward points earned for each customer per month and total.
    */
   public RewardsResponse calculateRewardsPointsWithStreams(CustomerPurchaseRewardPointRequest customerPurchaseRewardPointRequest) {
+    if (customerPurchaseRewardPointRequest.getCustomerPurchases() == null) {
+      throw new CustomerPurchasesNotProvidedException();
+    }
+
+
     final Map<String, Integer> customerTotalPointsMap =
             customerPurchaseRewardPointRequest.getCustomerPurchases()
                                               .stream()

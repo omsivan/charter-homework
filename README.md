@@ -1,6 +1,9 @@
 # charter-homework
 
 ### This application was built using Java 17 and Spring Boot ver. 3.1.3 using IntelliJ IDE
+### Maven was used as the build tool. To build the application use the following command:
+`mvn clean install`
+### or run the `clean` and `install` Lifecycle Events in the Maven Window of the IDE.
 
 ### To run the Spring Boot Application, run the following command in a command prompt.
 
