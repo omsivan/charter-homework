@@ -1,0 +1,44 @@
+{
+  "customerPurchases": [
+    {
+      "customerId": "001",
+      "amount": 50,
+      "dateTime": "2023-01-03 10:08:02"
+    },
+    {
+      "customerId": "001",
+      "amount": 60,
+      "dateTime": "2023-02-03 10:08:02"
+    },
+    {
+      "customerId": "001",
+      "amount": 75,
+      "dateTime": "2023-02-03 10:08:02"
+    },
+    {
+      "customerId": "001",
+      "amount": 200,
+      "dateTime": "2023-03-03 10:08:02"
+    },
+    {
+      "customerId": "002",
+      "amount": 5,
+      "dateTime": "2023-01-03 10:08:02"
+    },
+    {
+      "customerId": "002",
+      "amount": 55,
+      "dateTime": "2023-02-03 10:08:02"
+    },
+    {
+      "customerId": "002",
+      "amount": 77,
+      "dateTime": "2023-02-03 10:08:02"
+    },
+    {
+      "customerId": "002",
+      "amount": 100,
+      "dateTime": "2023-03-03 10:08:02"
+    }
+  ]
+}
